@@ -25,15 +25,14 @@ resource "constellix_vanity_nameserver" "vanitynameserver1" {
 
 ## Argument Reference ##
 * `name` - (Required) Vanity nameserver name should be unique.
-* `nameserver_group` - (Required) Name server group id. Available nameserver groups: `1`.
+* `nameserver_group` - (Required) Name server group id. 1 .. Available nameserver groups
 * `nameserver_list_string` - (Required) Comma separated name servers list
 * `is_default` - (Optional) Default flag. Default is false.
 * `is_public` - (Optional) isPublic flag. Default is false
-* `nameserver_group_name` - (Optional) Name server group name.
+* `nameserver_group_name` - (Optional) Name server group name
 
 ## Attribute Reference ##
-This resource exports the following attributes:
-* `id` - The constellix calculated id of vanitynameserver resource.
+The only attribute that this resource exports is the `id`, which is set to the constellix calculated id of vanitynameserver resource.
 
 ## Importing ##
 

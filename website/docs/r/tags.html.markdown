@@ -22,8 +22,8 @@ resource "constellix_tags" "tags1" {
 
 
 ## Attribute Reference ##
-This resource exports the following attributes:
-* `id` - The constellix calculated id of tag resource.
+No attributes are exported
+
 ## Importing ##
 
 An existing Tag can be [imported][docs-import] into this resource using its Id, via the following command:

@@ -3,7 +3,7 @@
 ## Disclaimer
 This is a fork of Constellix/terraform-provider-constellix with a small change to env variables and go releaser settings to enable builds on m1 macs.
 
-### Environemnt variables
+### Environment variables
 ```
 CONSTELLIX_API_KEY
 CONSTELLIX_SECRET_KEY
@@ -69,11 +69,33 @@ terraform plan -parallelism=1
 terraform apply -parallelism=1
 ```  
 
-Developing The Provider
+#### Developing The Provider
 -----------------------
 If you want to work on the provider, you'll first need [Go](http://www.golang.org) installed on your machine. You'll also need to correctly setup a [GOPATH](http://golang.org/doc/code.html#GOPATH), as well as adding `$GOPATH/bin` to your `$PATH`.
 
 To compile the provider, run `make build`. This will build the provider with sanity checks present in scripts directory and put the provider binary in `$GOPATH/bin` directory.
+
+
+### Release process
+------------------
+
+The release candidates and new stable versions of this provider can be deployed using the following process:
+
+- Calculate new version by incrementing the previous version. If current version is `v0.4.5`, next release candidates
+should be named as `v0.4.6-rc.1, v0.4.6-rc.2, ...` and stable version should be `v0.4.6`.
+
+- Create the tag and push it
+```shell
+git tag v0.4.6
+git push origin v0.4.6
+```
+
+- On creation of the new tag (starting with letter `v`), the [release workflow](.github/workflows/release.yml) will 
+execute as a GitHub Action and would create a `draft` release.
+- Review the `draft` release listed on [releases page](/releases).
+- Add release notes (recommended) and publish the release.
+- Once release is published, it will automatically push changes to terraform registry, which will publish the new version
+on https://registry.terraform.io/providers/Constellix/constellix.
 
 # Importing A records
 

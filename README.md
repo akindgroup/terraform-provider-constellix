@@ -95,7 +95,7 @@ execute as a GitHub Action and would create a `draft` release.
 - Review the `draft` release listed on [releases page](/releases).
 - Add release notes (recommended) and publish the release.
 - Once release is published, it will automatically push changes to terraform registry, which will publish the new version
-on https://registry.terraform.io/providers/Constellix/constellix.
+in [akindgroup/constellix in The Terraform Registry](https://registry.terraform.io/providers/akindgroup/constellix/latest).
 
 # Importing A records
 
